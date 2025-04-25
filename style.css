@@ -103,6 +103,14 @@ button:hover {
     height: 100vh;
     background: linear-gradient(to right, #0b0b0b, #2c0c49);
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.hero-banner.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-overlay::before {
@@ -139,11 +147,15 @@ button:hover {
     flex: 1 1 300px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .hero-logo {
     max-width: 250px;
     height: auto;
+    object-fit: contain;
+    pointer-events: none;
 }
 
 .hero-right {
@@ -169,10 +181,21 @@ button:hover {
     font-size: 1rem;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .hero-button:hover {
     background-color: #5e1aa3;
+    box-shadow: 0 0 10px #5e1aa3;
+}
+
+.hero-button:active {
+    transform: scale(0.97);
+    background-color: #290c4f;
+}
+
+.hero-button:focus {
+    outline: 2px solid #bb86fc;
 }
 
 @media (max-width: 768px) {
@@ -189,26 +212,3 @@ button:hover {
         font-size: 1.5rem;
     }
 }
-.hero-banner {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.hero-banner.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.hero-button:active {
-    transform: scale(0.97);
-    background-color: #290c4f;
-}
-
-.hero-button:focus {
-    outline: 2px solid #bb86fc;
-}
-.hero-button:hover {
-    background-color: #5e1aa3;
-    box-shadow: 0 0 10px #5e1aa3;
-}
-

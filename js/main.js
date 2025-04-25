@@ -1,12 +1,15 @@
-// Desplazamiento suave al hacer clic en los enlaces del nav
+// Desplazamiento suave solo para enlaces internos (los que empiezan con "#")
 document.querySelectorAll('nav a[href^="#"]').forEach(enlace => {
     enlace.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
+        const targetSelector = this.getAttribute('href');
+        if (targetSelector.startsWith("#")) {
+            e.preventDefault();
+            const target = document.querySelector(targetSelector);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });

@@ -199,3 +199,16 @@ button:hover {
     opacity: 1;
     transform: translateY(0);
 }
+.hero-button:active {
+    transform: scale(0.97);
+    background-color: #290c4f;
+}
+
+.hero-button:focus {
+    outline: 2px solid #bb86fc;
+}
+.hero-button:hover {
+    background-color: #5e1aa3;
+    box-shadow: 0 0 10px #5e1aa3;
+}
+

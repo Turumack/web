@@ -9,8 +9,8 @@ document.querySelectorAll('nav a[href^="#"]').forEach(enlace => {
     });
 });
 
-// Animación de aparición cuando se muestra cada sección
-const secciones = document.querySelectorAll('.section');
+// Seleccionar todas las secciones y el hero-banner
+const secciones = document.querySelectorAll('.section, .hero-banner');
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

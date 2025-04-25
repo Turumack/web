@@ -1,4 +1,5 @@
-/* Importar la fuente desde Google Fonts */
+
+/* Estilos Generales */
 body {
     margin: 0;
     font-family: 'Fira Code', monospace;
@@ -96,13 +97,95 @@ button:hover {
     font-size: 0.9rem;
 }
 
-.section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+/* Banner Hero Estilos */
+.hero-banner {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to right, #0b0b0b, #2c0c49);
+    overflow: hidden;
 }
 
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
+.hero-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/circuits.png');
+    opacity: 0.07;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 1400px;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-left {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo {
+    max-width: 250px;
+    height: auto;
+}
+
+.hero-right {
+    flex: 2 1 500px;
+    color: #ffffff;
+    text-align: left;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #bb86fc;
+    margin-bottom: 1.5rem;
+}
+
+.hero-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #3d0c6b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #5e1aa3;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-right {
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
 }

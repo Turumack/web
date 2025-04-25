@@ -119,8 +119,10 @@ button:hover {
     inset: 0;
     background-image: url('https://www.transparenttextures.com/patterns/circuits.png');
     opacity: 0.07;
-    z-index: 1;
+    z-index: 0; /* 🔥 BAJAMOS el z-index para que no bloquee los clics */
+    pointer-events: none; /* 🔥 CLAVE: asegura que no capture clics */
 }
+
 
 .hero-overlay {
     position: relative;

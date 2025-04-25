@@ -3,13 +3,15 @@ document.querySelectorAll('nav a[href^="#"]').forEach(enlace => {
     enlace.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth'
-        });
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// Seleccionar todas las secciones y el hero-banner
+// Animación de aparición para hero-banner y secciones normales
 const secciones = document.querySelectorAll('.section, .hero-banner');
 
 const observer = new IntersectionObserver(entries => {
